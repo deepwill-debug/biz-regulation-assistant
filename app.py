@@ -37,7 +37,7 @@ def extract_text(content):
 
 # 1. 페이지 설정
 st.set_page_config(
-    page_title="상공회의소 기업애로 규제개혁 AI 지원시스템 (Gemini)",
+    page_title="인천상공회의소 기업애로 진단 및 건의서 자동생성 지원시스템",
     page_icon="🏛️",
     layout="wide"
 )
@@ -131,7 +131,7 @@ st.sidebar.info(
 )
 
 # 4. 메인 타이틀
-st.title("🏛️ 기업애로 진단 및 정책건의서 자동생성 시스템")
+st.title("🏛️ 인천상공회의소 기업애로 진단 및 건의서 자동생성 지원시스템")
 st.caption("Google Gemini 모델을 기반으로 기업 애로를 분석하여 수용 가능성을 진단하고, 실시간 국가법령 조문을 반영한 정책건의서 초안을 작성합니다.")
 
 # 5. 입력 폼 구성
@@ -233,7 +233,7 @@ def create_docx(result_text, complaint: str = "", category: str = ""):
     title_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     sub_p = doc.add_paragraph()
-    sub_run = sub_p.add_run(f"분야: {category} | 대한상공회의소 규제개혁 지원시스템 (Gemini)")
+    sub_run = sub_p.add_run(f"분야: {category} | 인천상공회의소 규제개혁 지원시스템 (Gemini)")
     sub_run.font.size = Pt(10)
     sub_run.font.italic = True
     sub_run.font.color.rgb = RGBColor(100, 100, 100)
